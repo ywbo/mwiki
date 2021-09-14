@@ -67,3 +67,5 @@ redis-server.exe redis服务器程序
 修改数据：set <key> <value>
 
 帮助命令：help <命令名称>
+
+下一篇我们开始学习Redis的数据类型。
