@@ -1,8 +1,6 @@
 [toc]
 
-# <font color='#FF6347'>Spring事务管理(二)-</font>
-
-# <font color='#FF6347'>TransactionProxyFactoryBean原理</font>
+# <font color='#FF6347'>Spring事务管理(二)-TransactionProxyFactoryBean原理</font>
 
 > 通常Spring事务管理的配置都是XML或者生命是注解的方式，然后想要学习其运行原理，从TransactionProxyFactoryBean深入更加合适。窥斑见豹，逐步介绍Spring事物的运行机制。
 
