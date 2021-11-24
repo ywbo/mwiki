@@ -155,7 +155,7 @@ public static void main(String[] args) {
 
 其中有对三个部分都限制了最大值（MAX_DATA_CENTER_NUM、MAX_MACHINE_NUM、MAX_SEQUENCE），我们通过图解的方式来看下计算过程：
 
-![jisuan](F:\PersonalWork\mWiki\mNote\library\009-算法\image\jisuan.png)
+![jisuan](002-雪花算法（snowflake）实现原理图解.assets/jisuan.png)
 
 
 总结
