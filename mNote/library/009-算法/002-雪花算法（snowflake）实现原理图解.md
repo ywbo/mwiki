@@ -1,4 +1,4 @@
-# 雪花算法（snowflake）实现原理图解
+# 雪花算法(snowflake)实现原理图解
 
 snowflake是twitter的分布式环境生成全局唯一id的解决方案
 
