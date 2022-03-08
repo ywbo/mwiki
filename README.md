@@ -1,10 +1,8 @@
 # MWiki
 
 #### Introduce
-my wiki is here.
+The memory flowing through the fingertip is both a moment and an eternity.
 
 #### Instruction
 
-1.  Study Notes
-2.  Work  Notes
-3.  Lifves Notes
+Welcome to my study wiki.
