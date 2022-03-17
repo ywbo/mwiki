@@ -1,6 +1,6 @@
 #  Redis常用命令
 
-## 一、redis启动：
+## 一、Redis启动：
 
 >     本地启动：redis-cli
 >     远程启动：redis-cli -h host -p port -a password
