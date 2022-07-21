@@ -76,11 +76,6 @@ Redis 官网也解释了自己为啥不支持回滚。简单来说就是 Redis �
 
 因此，Redis 事务是不建议在日常开发中使用的。
 
-**相关 issue** :
-
-- [issue452: 关于 Redis 事务不满足原子性的问题](https://github.com/Snailclimb/JavaGuide/issues/452) 。
-- [Issue491:关于 redis 没有事务回滚？](https://github.com/Snailclimb/JavaGuide/issues/491)
-
 ### 如何解决 Redis 事务的缺陷？
 
 Redis 从 2.6 版本开始支持执行 Lua 脚本，它的功能和事务非常类似。我们可以利用 Lua 脚本来批量执行多条 Redis 命令，这些 Redis 命令会被提交到 Redis 服务器一次性执行完成，大幅减小了网络开销。
