@@ -107,3 +107,10 @@ Java虚拟机的多线程是通过线程轮流切换并分配处理器执行时�
 经过上面的讲解，想必大家已经了解到JVM内存结构的基本情况。下面对照脑图，归纳总结一下，看你能说出来多少。
 
 ![image](http://www.choupangxia.com/wp-content/uploads/2019/10/jvm-xmind.jpg)
+
+
+
+----
+
+[程序新视界 – 开启程序员的新视界 (choupangxia.com)](http://www.choupangxia.com/)
+
