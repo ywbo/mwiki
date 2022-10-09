@@ -18,7 +18,7 @@ synchronized 关键字最主要的三种使用方式：
 
 给当前对象实例加锁，进入同步代码前要获得 **当前对象实例的锁** 。
 
-```
+```java
 synchronized void method() {
     //业务代码
 }
@@ -30,7 +30,7 @@ synchronized void method() {
 
 这是因为静态成员不属于任何一个实例对象，归整个类所有，不依赖于类的特定实例，被类的所有实例共享。
 
-```
+```java
 synchronized static void method() {
     //业务代码
 }
@@ -45,7 +45,7 @@ synchronized static void method() {
 - `synchronized(object)` 表示进入同步代码库前要获得 **给定对象的锁**。
 - `synchronized(类.class)` 表示进入同步代码前要获得 **给定 Class 的锁**
 
-```
+```java
 synchronized(this) {
     //业务代码
 }
@@ -69,7 +69,7 @@ synchronized 关键字底层原理属于 JVM 层面。
 
 #### synchronized 同步语句块的情况
 
-```
+```java
 public class SynchronizedDemo {
     public void method() {
         synchronized (this) {
@@ -103,7 +103,7 @@ public class SynchronizedDemo {
 
 #### synchronized 修饰方法的的情况
 
-```
+```java
 public class SynchronizedDemo2 {
     public synchronized void method() {
         System.out.println("synchronized 方法");
