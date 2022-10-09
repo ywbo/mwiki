@@ -14,7 +14,7 @@ JDK 中自带的`ThreadLocal`类正是为了解决这样的问题。 **`ThreadLo
 
 相信看了上面的解释，大家已经搞懂 `ThreadLocal` 类是个什么东西了。下面简单演示一下如何在项目中实际使用 `ThreadLocal` 。
 
-```
+```java
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
@@ -51,7 +51,7 @@ public class ThreadLocalExample implements Runnable{
 
 输出结果 :
 
-```
+```java
 Thread Name= 0 default Formatter = yyyyMMdd HHmm
 Thread Name= 0 formatter = yy-M-d ah:mm
 Thread Name= 1 default Formatter = yyyyMMdd HHmm
@@ -78,7 +78,7 @@ Thread Name= 9 formatter = yy-M-d ah:mm
 
 上面有一段代码用到了创建 `ThreadLocal` 变量的那段代码用到了 Java8 的知识，它等于下面这段代码，如果你写了下面这段代码的话，IDEA 会提示你转换为 Java8 的格式(IDEA 真的不错！)。因为 ThreadLocal 类在 Java 8 中扩展，使用一个新的方法`withInitial()`，将 Supplier 功能接口作为参数。
 
-```
+```java
 private static final ThreadLocal<SimpleDateFormat> formatter = new ThreadLocal<SimpleDateFormat>(){
     @Override
     protected SimpleDateFormat initialValue(){
@@ -91,7 +91,7 @@ private static final ThreadLocal<SimpleDateFormat> formatter = new ThreadLocal<S
 
 从 `Thread`类源代码入手。
 
-```
+```java
 public class Thread implements Runnable {
     //......
     //与此线程有关的ThreadLocal值。由ThreadLocal类维护
@@ -107,7 +107,7 @@ public class Thread implements Runnable {
 
 `ThreadLocal`类的`set()`方法
 
-```
+```java
 public void set(T value) {
     //获取当前请求的线程    
     Thread t = Thread.currentThread();
@@ -128,7 +128,7 @@ ThreadLocalMap getMap(Thread t) {
 
 **每个`Thread`中都具备一个`ThreadLocalMap`，而`ThreadLocalMap`可以存储以`ThreadLocal`为 key ，Object 对象为 value 的键值对。**
 
-```
+```java
 ThreadLocalMap(ThreadLocal<?> firstKey, Object firstValue) {
     //......
 }
@@ -150,7 +150,7 @@ ThreadLocalMap(ThreadLocal<?> firstKey, Object firstValue) {
 
 这样一来，`ThreadLocalMap` 中就会出现 key 为 null 的 Entry。假如我们不做任何措施的话，value 永远无法被 GC 回收，这个时候就可能会产生内存泄露。`ThreadLocalMap` 实现中已经考虑了这种情况，在调用 `set()`、`get()`、`remove()` 方法的时候，会清理掉 key 为 null 的记录。使用完 `ThreadLocal`方法后 最好手动调用`remove()`方法
 
-```
+```java
 static class Entry extends WeakReference<ThreadLocal<?>> {
     /** The value associated with this ThreadLocal. */
     Object value;
