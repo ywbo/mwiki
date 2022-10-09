@@ -40,7 +40,7 @@ Atomic 翻译成中文是原子的意思。在化学上，我们知道原子是�
 
 > **🐛 修正（参见：[issue#626](https://github.com/Snailclimb/JavaGuide/issues/626)）** : `AtomicMarkableReference` 不能解决 ABA 问题。
 
-```
+```java
     /**
 
 AtomicMarkableReference是将一个boolean值作是否有更改的标记，本质就是它的版本号只有两个，true和false，
@@ -91,7 +91,7 @@ public class SolveABAByAtomicMarkableReference {
 - 例子描述(可能不太合适，但好理解): 年初，现金为零，然后通过正常劳动赚了三百万，之后正常消费了（比如买房子）三百万。年末，虽然现金零收入（可能变成其他形式了），但是赚了钱是事实，还是得交税的！
 - 代码例子（以`AtomicInteger`为例）
 
-```
+```java
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerDefectDemo {
@@ -154,7 +154,7 @@ public class AtomicIntegerDefectDemo {
 
 输出内容如下：
 
-```
+```java
 Thread-0 ------ currentValue=1
 Thread-1 ------ currentValue=1, finalValue=2, compareAndSet Result=true
 Thread-1 ------ currentValue=2, finalValue=1, compareAndSet Result=true
@@ -177,7 +177,7 @@ Thread-0 ------ currentValue=1, finalValue=2, compareAndSet Result=true
 
 **AtomicInteger 类常用方法**
 
-```
+```java
 public final int get() //获取当前的值
 public final int getAndSet(int newValue)//获取当前的值，并设置新的值
 public final int getAndIncrement()//获取当前的值，并自增
@@ -189,7 +189,7 @@ public final void lazySet(int newValue)//最终设置为newValue,使用 lazySet 
 
 ### AtomicInteger 常见方法使用
 
-```
+```java
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerTest {
@@ -215,7 +215,7 @@ public class AtomicIntegerTest {
 
 **① 多线程环境不使用原子类保证线程安全（基本数据类型）**
 
-```
+```java
 class Test {
         private volatile int count = 0;
         //若要线程安全执行执行count++，需要加锁
@@ -231,7 +231,7 @@ class Test {
 
 **② 多线程环境使用原子类保证线程安全（基本数据类型）**
 
-```
+```java
 class Test2 {
         private AtomicInteger count = new AtomicInteger();
 
@@ -249,7 +249,7 @@ class Test2 {
 
 AtomicInteger 类的部分源码：
 
-```
+```java
     // setup to use Unsafe.compareAndSwapInt for updates（更新操作时提供“比较并替换”的作用）
     private static final Unsafe unsafe = Unsafe.getUnsafe();
     private static final long valueOffset;
@@ -282,7 +282,7 @@ CAS 的原理是拿期望的值和原本的一个值作比较，如果相同则�
 
 **AtomicIntegerArray 类常用方法**
 
-```
+```java
 public final int get(int i) //获取 index=i 位置元素的值
 public final int getAndSet(int i, int newValue)//返回 index=i 位置的当前的值，并将其设置为新值：newValue
 public final int getAndIncrement(int i)//获取 index=i 位置元素的值，并让该位置的元素自增
@@ -294,7 +294,7 @@ public final void lazySet(int i, int newValue)//最终 将index=i 位置的元�
 
 ### AtomicIntegerArray 常见方法使用
 
-```
+```java
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class AtomicIntegerArrayTest {
@@ -332,7 +332,7 @@ public class AtomicIntegerArrayTest {
 
 ### AtomicReference 类使用示例
 
-```
+```java
 import java.util.concurrent.atomic.AtomicReference;
 
 public class AtomicReferenceTest {
@@ -387,7 +387,7 @@ Daisy
 
 ### AtomicStampedReference 类使用示例
 
-```
+```java
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 public class AtomicStampedReferenceDemo {
@@ -435,7 +435,7 @@ public class AtomicStampedReferenceDemo {
 
 输出结果如下：
 
-```
+```java
 currentValue=0, currentStamp=0
 currentValue=666, currentStamp=999, casResult=true
 currentValue=666, currentStamp=999
@@ -446,7 +446,7 @@ currentValue=666, currentStamp=999, wCasResult=true
 
 ### AtomicMarkableReference 类使用示例
 
-```
+```java
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class AtomicMarkableReferenceDemo {
@@ -494,7 +494,7 @@ public class AtomicMarkableReferenceDemo {
 
 输出结果如下：
 
-```
+```java
 currentValue=null, currentMark=false
 currentValue=true, currentMark=true, casResult=true
 currentValue=true, currentMark=true
@@ -519,7 +519,7 @@ currentValue=true, currentMark=true, wCasResult=true
 
 ### AtomicIntegerFieldUpdater 类使用示例
 
-```
+```java
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 public class AtomicIntegerFieldUpdaterTest {
@@ -565,7 +565,7 @@ class User {
 
 输出结果：
 
-```
+```java
 22
 23
 ```
