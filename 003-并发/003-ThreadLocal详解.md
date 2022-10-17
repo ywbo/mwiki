@@ -1,6 +1,6 @@
-## ThreadLocal
+# ThreadLocal
 
-### ThreadLocal 有什么用？
+## 1. ThreadLocal 有什么用？
 
 通常情况下，我们创建的变量是可以被任何一个线程访问并修改的。**如果想实现每一个线程都有自己的专属本地变量该如何解决呢？**
 
@@ -10,7 +10,7 @@ JDK 中自带的`ThreadLocal`类正是为了解决这样的问题。 **`ThreadLo
 
 再举个简单的例子：两个人去宝屋收集宝物，这两个共用一个袋子的话肯定会产生争执，但是给他们两个人每个人分配一个袋子的话就不会出现这样的问题。如果把这两个人比作线程的话，那么 ThreadLocal 就是用来避免这两个线程竞争的。
 
-### 如何使用 ThreadLocal？
+## 2. 如何使用 ThreadLocal？
 
 相信看了上面的解释，大家已经搞懂 `ThreadLocal` 类是个什么东西了。下面简单演示一下如何在项目中实际使用 `ThreadLocal` 。
 
@@ -87,7 +87,7 @@ private static final ThreadLocal<SimpleDateFormat> formatter = new ThreadLocal<S
 };
 ```
 
-### ThreadLocal 原理了解吗？
+## 3. ThreadLocal 原理了解吗？
 
 从 `Thread`类源代码入手。
 
@@ -144,7 +144,7 @@ ThreadLocalMap(ThreadLocal<?> firstKey, Object firstValue) {
 
 [![ThreadLocal内部类](https://camo.githubusercontent.com/d6fd9e8cf968073e9e079b01ed8d4d1639183ee20f51e55dac964d660aa72c25/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f6769746875622f6a61766167756964652f6a6176612f636f6e63757272656e742f7468726561642d6c6f63616c2d696e6e65722d636c6173732e706e67)](https://camo.githubusercontent.com/d6fd9e8cf968073e9e079b01ed8d4d1639183ee20f51e55dac964d660aa72c25/68747470733a2f2f67756964652d626c6f672d696d616765732e6f73732d636e2d7368656e7a68656e2e616c6979756e63732e636f6d2f6769746875622f6a61766167756964652f6a6176612f636f6e63757272656e742f7468726561642d6c6f63616c2d696e6e65722d636c6173732e706e67)
 
-### ThreadLocal 内存泄露问题是怎么导致的？
+## 4. ThreadLocal 内存泄露问题是怎么导致的？
 
 `ThreadLocalMap` 中使用的 key 为 `ThreadLocal` 的弱引用，而 value 是强引用。所以，如果 `ThreadLocal` 没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而 value 不会被清理掉。
 
