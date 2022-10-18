@@ -20,7 +20,7 @@ JDK 提供的这些容器大部分在 `java.util.concurrent` 包中。
 
 ### CopyOnWriteArrayList 简介
 
-```
+```java
 public class CopyOnWriteArrayList<E>
 extends Object
 implements List<E>, RandomAccess, Cloneable, Serializable
@@ -42,7 +42,7 @@ implements List<E>, RandomAccess, Cloneable, Serializable
 
 读取操作没有任何同步控制和锁操作，理由就是内部数组 `array` 不会发生修改，只会被另外一个 `array` 替换，因此可以保证数据安全。
 
-```
+```java
     /** The array, accessed only via getArray/setArray. */
     private transient volatile Object[] array;
     public E get(int index) {
@@ -61,7 +61,7 @@ implements List<E>, RandomAccess, Cloneable, Serializable
 
 `CopyOnWriteArrayList` 写入操作 `add()`方法在添加集合的时候加了锁，保证了同步，避免了多线程写的时候会 copy 出多个副本出来。
 
-```
+```java
     /**
      * Appends the specified element to the end of this list.
      *
@@ -110,7 +110,7 @@ Java 提供的线程安全的 `Queue` 可以分为**阻塞队列**和**非阻塞
 
 `ArrayBlockingQueue` 是 `BlockingQueue` 接口的有界队列实现类，底层采用数组来实现。
 
-```
+```java
 public class ArrayBlockingQueue<E>
 extends AbstractQueue<E>
 implements BlockingQueue<E>, Serializable{}
@@ -120,7 +120,7 @@ implements BlockingQueue<E>, Serializable{}
 
 `ArrayBlockingQueue` 默认情况下不能保证线程访问队列的公平性，所谓公平性是指严格按照线程等待的绝对时间顺序，即最先等待的线程能够最先访问到 `ArrayBlockingQueue`。而非公平性则是指访问 `ArrayBlockingQueue` 的顺序不是遵守严格的时间顺序，有可能存在，当 `ArrayBlockingQueue` 可以被访问时，长时间阻塞的线程依然无法访问到 `ArrayBlockingQueue`。如果保证公平性，通常会降低吞吐量。如果需要获得公平性的 `ArrayBlockingQueue`，可采用如下代码：
 
-```
+```java
 private static ArrayBlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<Integer>(10,true);
 ```
 
@@ -130,7 +130,7 @@ private static ArrayBlockingQueue<Integer> blockingQueue = new ArrayBlockingQueu
 
 **相关构造方法:**
 
-```
+```java
     /**
      *某种意义上的无界队列
      * Creates a {@code LinkedBlockingQueue} with a capacity of
