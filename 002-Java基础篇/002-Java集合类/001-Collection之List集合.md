@@ -1,4 +1,4 @@
-# Collection<interface>集合之List集合
+# Collection集合之List集合
 
 Collection集合概览图：
 
