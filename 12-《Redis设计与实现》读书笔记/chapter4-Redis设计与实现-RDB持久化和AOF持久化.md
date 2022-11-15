@@ -10,7 +10,7 @@
 
 <img src="https://bucket-1259555870.cos.ap-chengdu.myqcloud.com/20200104142148.png"  style="zoom:67%;display: block; margin: 0px auto; vertical-align: middle;">
 
-在Redis中，只有将数据保存在内存磁盘里才会永久保存，**如果服务器进程退出，服务器中的数据库状态就会消失。**为了解决这个问题，Redis提供了RDB持久化功能，这个功能可以将Redis在内存中的数据库状态保存到磁盘里面。
+在Redis中，只有将数据保存在内存磁盘里才会永久保存，**如果服务器进程退出，服务器中的数据库状态就会消失。** 为了解决这个问题，Redis提供了RDB持久化功能，这个功能可以将Redis在内存中的数据库状态保存到磁盘里面。
 
 RDB持久化产生的RDB文件(Redis Database)是一个**经过压缩的二进制文件，该文件可以被还原为数据库状态**，所以即使服务器停机，服务器的数据还是被安全保存在硬盘中。
 
