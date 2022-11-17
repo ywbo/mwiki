@@ -8,3 +8,50 @@ MySQL 面试必看
 
 > #### 🌈 这里要额外补充一点：只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！
 
+
+## 索引
+建立索引条件：
+1. 不为 NULL 的字段；
+2. 被频繁查询的字段；
+3. 被作为条件查询的字段；
+4. 频繁需要排序的字段；
+5. 被经常频繁用于连接的字段；
+6. 被频繁更新的字段应该慎重建立索引；
+7. 考虑在字符串类型的字段上使用前缀索引代替普通索引；
+8. 尽可能的考虑建立联合索引而不是单列索引；
+9. 注意避免冗余索引；
+10. 避免索引失效；
+
+## 创建索引
+在执行CREATE TABLE语句时可以创建索引，也可以单独用CREATE INDEX或ALTER TABLE来为表增加索引。
+
+1．ALTER TABLE
+ALTER TABLE用来创建普通索引、UNIQUE索引或PRIMARY KEY索引。
+```sql
+ALTER TABLE table_name ADD INDEX index_name (column_list)
+
+ALTER TABLE table_name ADD UNIQUE (column_list)
+
+ALTER TABLE table_name ADD PRIMARY KEY (column_list)
+```
+
+其中table_name是要增加索引的表名，column_list指出对哪些列进行索引，多列时各列之间用逗号分隔。索引名index_name可选，缺省时，MySQL将根据第一个索引列赋一个名称。另外，ALTER TABLE允许在单个语句中更改多个表，因此可以在同时创建多个索引。
+
+2．CREATE INDEX
+CREATE INDEX可对表增加普通索引或UNIQUE索引。
+```sql
+CREATE INDEX index_name ON table_name (column_list)
+
+CREATE UNIQUE INDEX index_name ON table_name (column_list)
+```
+table_name、index_name和column_list具有与ALTER TABLE语句中相同的含义，索引名不可选。另外，不能用CREATE INDEX语句创建PRIMARY KEY索引。
+
+3．索引类型
+在创建索引时，可以规定索引能否包含重复值。如果不包含，则索引应该创建为PRIMARY KEY或UNIQUE索引。对于单列惟一性索引，这保证单列不包含重复的值。对于多列惟一性索引，保证多个值的组合不重复。
+
+PRIMARY KEY索引和UNIQUE索引非常类似。事实上，PRIMARY KEY索引仅是一个具有名称PRIMARY的UNIQUE索引。这表示一个表只能包含一个PRIMARY KEY，因为一个表中不可能具有两个同名的索引。
+
+下面的SQL语句对students表在sid上添加PRIMARY KEY索引。
+```sql
+ALTER TABLE students ADD PRIMARY KEY (sid)
+```
