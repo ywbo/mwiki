@@ -72,5 +72,5 @@ ALTER TABLE table_name DROP PRIMARY KEY
 
 ## MySQL 锁
 
-[MySQL的MVVC实现原理](https://blog.csdn.net/qq_40634846/article/details/123554485)
+[MySQL的MVCC实现原理](https://blog.csdn.net/qq_40634846/article/details/123554485)
 
