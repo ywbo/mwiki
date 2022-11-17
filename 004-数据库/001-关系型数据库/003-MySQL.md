@@ -55,3 +55,17 @@ PRIMARY KEY索引和UNIQUE索引非常类似。事实上，PRIMARY KEY索引仅�
 ```sql
 ALTER TABLE students ADD PRIMARY KEY (sid)
 ```
+## 删除索引
+可利用ALTER TABLE或DROP INDEX语句来删除索引。类似于CREATE INDEX语句，DROP INDEX可以在ALTER TABLE内部作为一条语句处理，语法如下。
+```sql
+DROP INDEX index_name ON talbe_name
+
+ALTER TABLE table_name DROP INDEX index_name
+
+ALTER TABLE table_name DROP PRIMARY KEY
+```
+其中，前两条语句是等价的，删除掉table_name中的索引index_name。
+
+第3条语句只在删除PRIMARY KEY索引时使用，因为一个表只可能有一个PRIMARY KEY索引，因此不需要指定索引名。如果没有创建PRIMARY KEY索引，但表具有一个或多个UNIQUE索引，则MySQL将删除第一个UNIQUE索引。
+
+如果从表中删除了某列，则索引会受到影响。对于多列组合的索引，如果删除其中的某列，则该列也会从索引中删除。如果删除组成索引的所有列，则整个索引将被删除。
