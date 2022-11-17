@@ -69,3 +69,8 @@ ALTER TABLE table_name DROP PRIMARY KEY
 第3条语句只在删除PRIMARY KEY索引时使用，因为一个表只可能有一个PRIMARY KEY索引，因此不需要指定索引名。如果没有创建PRIMARY KEY索引，但表具有一个或多个UNIQUE索引，则MySQL将删除第一个UNIQUE索引。
 
 如果从表中删除了某列，则索引会受到影响。对于多列组合的索引，如果删除其中的某列，则该列也会从索引中删除。如果删除组成索引的所有列，则整个索引将被删除。
+
+## MySQL 锁
+
+[MySQL的MVVC实现原理](https://blog.csdn.net/qq_40634846/article/details/123554485)
+
