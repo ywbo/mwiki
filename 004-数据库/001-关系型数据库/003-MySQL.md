@@ -5,7 +5,7 @@
 - `一致性（Consistency）`： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；
 
 > #### 🌈 这里要额外补充一点：只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！
-
+------
 ## 索引
 
 ### 建立索引条件：
@@ -20,7 +20,7 @@
 8. 尽可能的考虑建立联合索引而不是单列索引；
 9. 注意避免冗余索引；
 10. 避免索引失效；
-
+------
 ### 创建索引
 在执行CREATE TABLE语句时可以创建索引，也可以单独用CREATE INDEX或ALTER TABLE来为表增加索引。
 
@@ -54,6 +54,7 @@ PRIMARY KEY索引和UNIQUE索引非常类似。事实上，PRIMARY KEY索引仅�
 ```sql
 ALTER TABLE students ADD PRIMARY KEY (sid)
 ```
+------
 ### 删除索引
 可利用ALTER TABLE或DROP INDEX语句来删除索引。类似于CREATE INDEX语句，DROP INDEX可以在ALTER TABLE内部作为一条语句处理，语法如下。
 ```sql
