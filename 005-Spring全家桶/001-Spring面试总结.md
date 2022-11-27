@@ -149,7 +149,7 @@ Spring 的 IOC 是基于**工厂设计模式**再加上**反射**实现。
 
 ### 6. 有那些注入方式，以及它们的区别是什么？
 
-Spring 的依赖注入分为**`接口注入（Interface Injection）`、`Setter 方法注入（Setter Injection）` 和`构造器注入（Constructor Injection）`** 三种方式。其中接口注入由于在灵活性和易用性比较差，现在从 Spring4 开始已被废弃。
+Spring 的依赖注入分为**`接口注入（Interface Injection）`、`Setter 方法注入（Setter Injection）` 和`构造器注入（Constructor Injection）`** 三种方式。其中**接口注入**由于在灵活性和易用性比较差，现在从 Spring4 开始**已被废弃**。
 
 - **构造器依赖注入**：构造器依赖注入通过容器触发一个类的构造器来实现的，该类有一系列参数，每个参数代表一个对其他类的依赖。
 
