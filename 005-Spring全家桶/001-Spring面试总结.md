@@ -161,7 +161,6 @@ Spring 的依赖注入分为**`接口注入（Interface Injection）`、`Setter 
 - 构造函数注入不会覆盖 setter 属性，而 Setter 方法会。
 - 构造函数注入任意修改都会创建一个新实例，而 Setter 方法不会。
 - 构造函数注入适用于设置大量属性，Setter 方法使用与设置少量属性。
-
 ---
 
 ## 三、Bean
