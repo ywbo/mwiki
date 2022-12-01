@@ -91,8 +91,7 @@ Spring 提供了以下 5 种标准的事件：
 
 Ioc 是 Inversion of Control 的缩写，即**控制反转**。Ioc 不是一项技术，而是一种**设计思想**。在 Java 开发中，Ioc 意味着你可以将设计好的对象交给 Ioc 容器，完成初始化和管理，当你需要时由容器提供控制。
 
-Spring IOC 可谓是 Spring 的核心，对于 Spring 框架而言，所谓 Ioc 就是由 Spring 来负责控制对象的生命周期和对象间的关系。**正这个控制过程中，需要动态的向某个对象提供它所需要的其他对象，这一点是通过 DI（Dependency Injection，依赖注入）来实现的**。
-----
+> `Spring IOC` 可谓是 Spring 的核心，对于 Spring 框架而言，所谓 Ioc 就是由 Spring 来负责控制对象的生命周期和对象间的关系。**正这个控制过程中，需要动态的向某个对象提供它所需要的其他对象，这一点是通过 DI（Dependency Injection，依赖注入）来实现的**。
 
 ### 2. IOC 作用或者好处？
 
@@ -108,14 +107,17 @@ Spring 的 IOC 是基于**工厂设计模式**再加上**反射**实现。
 
 ### 4. Spring有哪些类容器？
 
-- **BeanFactory**：这是一个最简单的容器，它主要的功能是为依赖注入（DI）提供支持。
-- **ApplicationContext**：Application Context 是 Spring 中的高级容器。和 BeanFactory 类似，它可以加载和管理配置文件中定义的 Bean。 另外，它还增加了企业所需要的功能，比如，从属性文件中解析文本信息和将事件传递给所指定的监听器。
+- **`BeanFactory`**：这是一个最简单的容器，它主要的功能是为依赖注入（DI）提供支持。
 
-一些常被使用的 ApplicationContext 实现类：
+- **`ApplicationContext`**：Application Context 是 Spring 中的高级容器。和 BeanFactory 类似，它可以加载和管理配置文件中定义的 Bean。 另外，它还增加了企业所需要的功能，比如，从属性文件中解析文本信息和将事件传递给所指定的监听器。
 
-- **FileSystemXmlApplicationContext**：该容器从 XML 文件中加载已被定义的 Bean， 需要提供 XML 文件的完整路径。
-- **ClassPathXmlApplicationContext**：同样从 XML 文件中加载已被定义的 Bean，但无需提供完整路径，因为它会从 CLASSPATH 中搜索配置文件。
-- **WebXmlApplicationContext**：该容器会在一个 Web 应用程序的范围内加载在 XML 文件中已被定义的 Bean。
+  
+
+一些常被使用的 `ApplicationContext` 实现类：
+
+- **`FileSystemXmlApplicationContext`**：该容器从 XML 文件中加载已被定义的 Bean， 需要提供 XML 文件的完整路径。
+- **`ClassPathXmlApplicationContext`**：同样从 XML 文件中加载已被定义的 Bean，但无需提供完整路径，因为它会从 CLASSPATH 中搜索配置文件。
+- **`WebXmlApplicationContext`**：该容器会在一个 Web 应用程序的范围内加载在 XML 文件中已被定义的 Bean。
 
 ----
 
@@ -188,7 +190,6 @@ Spring 提供以下五种 Bean 的作用域：
 实际上大部分时候我们定义的 Bean 是无状态的（如 dao 类），所以在某种程度上来说，Bean 也是安全的，但如果 Bean 有状态的话（比如 model 对象），那就要开发者自己去保证线程安全了。
 
 【注】`其中有状态就是有数据存储功能，无状态就是不会。`
------
 
 ### 3. Spring Bean 的生命周期？
 
@@ -227,7 +228,6 @@ AOP 全称（Aspect Oriented Programming），是**面向切片编程**的简称
 传统的 OOP 开发中代码逻辑是至上而下的过程中会长生一些横切性问题（大量与业务无关的重复代码），这些横切问题会散落在代码的各个地方且难以维护。AOP 的编程思想就是把业务逻辑和横切的问题进行分离，从而达到解耦的目的，使代码的重用性和开发效率高（目的是重用代码，把公共的代码抽取出来）。
 
 即**AOP 的作用是对业务逻辑的各个部分进行隔离，降低业务逻辑的耦合性，提高程序的可重用型和开发效率。**
-----
 
 ### 2. AOP有哪些应用场景？
 
