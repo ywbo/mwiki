@@ -37,7 +37,7 @@ SpringCloud Netflix 核心组件
 - 这里是可以使用`ZooKeeper`来`替换`掉Eureka的。
 
   - Zookeeper是一个分布式协调工具，可以实现服务注册与发现、注册中心、消息中间件、分布式配置中心等。
-  - 
+  - Kafka：
 
 ## 3、分别说说平时都用到哪些？
 
