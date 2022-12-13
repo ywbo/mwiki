@@ -34,10 +34,16 @@ SpringCloud Netflix 核心组件
 
      另一方（消费者|服务提供者），以该别名的方式去注册中心上获取到实际的服务通讯地址，让后在实现rpc调用。
 
-- 这里是可以使用`ZooKeeper`来`替换`掉Eureka的。
+  - **Eureka Client**：负责将这个服务的信息注册到 Eureka Server中
 
-  - Zookeeper是一个分布式协调工具，可以实现服务注册与发现、注册中心、消息中间件、分布式配置中心等。
-  - Kafka：
+  - **Eureka Server**：注册中心，里面有个注册表，保存了各个服务所在的机器和端口号
+
+  
+
+  - 这里是可以使用`ZooKeeper`来`替换`掉Eureka的。
+    - Zookeeper是一个分布式协调工具，可以实现服务注册与发现、注册中心、消息中间件、分布式配置中心等。
+
+- ### SpringCloud Feign
 
 ## 3、分别说说平时都用到哪些？
 
