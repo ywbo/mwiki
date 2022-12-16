@@ -106,6 +106,7 @@ SpringCloud Netflix 核心组件
   - `Feign`：基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求
   - `Hystrix`：发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题
   - `Zuul`：如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务
+    - [REF]([SpringCould组件有哪些，他们的作用是什么？（面试常问框架没有之一）https://blog.csdn.net/tzydzj/article/details/113337606) 
 
 ## 3、分别说说平时都用到哪些？
 
