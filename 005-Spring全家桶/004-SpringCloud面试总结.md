@@ -108,5 +108,7 @@ SpringCloud Netflix 核心组件
   - `Zuul`：如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务
     - [REF]([SpringCould组件有哪些，他们的作用是什么？（面试常问框架没有之一）https://blog.csdn.net/tzydzj/article/details/113337606) 
 
+----
+
 ## 3、分别说说平时都用到哪些？
 
