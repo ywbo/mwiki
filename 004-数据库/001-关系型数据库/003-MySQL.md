@@ -188,6 +188,6 @@ B+ 树叶子结点之间用链表有序连接，所以扫描全部数据只需�
 
 ------
 
-[MySQL面试集](https://blog.csdn.net/adminpd/article/details/122910606)
-[MySQL精选面试题](https://blog.csdn.net/hahazz233/article/details/125372412?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-125372412-blog-122910606.235^v29^pc_relevant_default_base3&spm=1001.2101.3001.4242.1&utm_relevant_index=2)
+- [MySQL面试集](https://blog.csdn.net/adminpd/article/details/122910606)
+- [MySQL精选面试题](https://blog.csdn.net/hahazz233/article/details/125372412?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-125372412-blog-122910606.235^v29^pc_relevant_default_base3&spm=1001.2101.3001.4242.1&utm_relevant_index=2)
 
