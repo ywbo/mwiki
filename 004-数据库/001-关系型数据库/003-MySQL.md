@@ -140,6 +140,8 @@ B+ 树叶子结点之间用链表有序连接，所以扫描全部数据只需�
   ![img](https://img-blog.csdnimg.cn/2019052019551758.png)
 
 - MySQL 事务与 Oracle 事务区别
+- MySQL 默认事务隔离级别是 RR（Repeatbale Reads）—— 可重复读。
+- Oracle 默认事务隔离级别是 RC（Read Commited）—— 读已提交。
 
 
 
